@@ -1,0 +1,19 @@
+{
+  "name": "csscity",
+  "version": "1.0.0",
+  "description": "A city based on CSS - CSS City.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tvuollo/CssCity.git"
+  },
+  "author": "Tuomas Vuollo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tvuollo/CssCity/issues"
+  },
+  "homepage": "https://github.com/tvuollo/CssCity#readme"
+}
