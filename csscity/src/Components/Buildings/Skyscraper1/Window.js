@@ -14,7 +14,7 @@ const Window = (props) => {
     }
 
     const windowStyles= {
-        background: "url(" + Sprite + ") " + windowStatus + " no-repeat",
+        background: "rgba(0,0,0,.3) url(" + Sprite + ") " + windowStatus + " no-repeat",
         backgroundSize: "3rem auto"
     };
 

@@ -15,7 +15,7 @@ body {
 }
 
 .nav {
-    background-color: #fff;
+    background-color: rgba(255,255,255,.7);
     display: block;
     left: 0;
     min-height: 40px;
@@ -23,6 +23,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 999;
 
     &__button {
         appearance: initial;
