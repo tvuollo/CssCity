@@ -1,11 +1,17 @@
 import React from 'react';
 
-import Wall from './Components/Wall/Wall';
+import "./App.scss";
+
+import Wall from './Components/Buildings/Skyscraper1/Wall';
+import Canvas from './Components/Canvas/Canvas';
 
 function App() {
   return (
     <div className="App">
-      <Wall />
+      <div style={{padding:20}}>
+        <Wall />        
+      </div>
+        <Canvas />
     </div>
   );
 }
