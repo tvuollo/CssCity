@@ -1,6 +1,7 @@
 .canvas {
     transform: rotateX(60deg) rotateY(0deg) rotateZ(30deg) scale(0.5);
     animation: rotateCanvas 60s infinite;
+    animation-timing-function: linear;
 }
 
 @keyframes rotateCanvas {

@@ -2,6 +2,7 @@ import React from 'react';
 
 import "./Canvas.scss";
 import Wall from './../Buildings/Skyscraper1/Wall';
+import Skyscraper1 from './../Buildings/Skyscraper1/Skyscraper1';
 
 
 const Canvas = () => {
@@ -24,7 +25,7 @@ const Canvas = () => {
                 style={{
                     backgroundColor: "rgba(0,175,50,.75)",
                     height: "200rem",
-                    perspective: "300rem",
+                    perspective: "3000rem",
                     position: "absolute",
                     left: "50%",
                     margin: "-100rem 0px 0px -100rem",
@@ -34,7 +35,12 @@ const Canvas = () => {
                     transform: "rotateX(60deg) rotateY(0deg) rotateZ(30deg) scale(0.5)"
                 }}
             >
-                <Wall />
+                <Skyscraper1
+                    style={{
+                        left: "82rem",
+                        top: "82rem"
+                    }}
+                />
             </div>
         </div>
     );

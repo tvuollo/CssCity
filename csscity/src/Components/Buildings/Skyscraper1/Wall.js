@@ -3,22 +3,24 @@ import React, { useState } from 'react';
 import Sprite from './Wall.gif';
 import Floor from './Floor';
 
-const Wall = ({
-    height = 6
-}) => {
+const Wall = (props) => {
+
+    const wallStyles = {
+        background: "url(" + Sprite + ") 0 0 no-repeat",
+        backgroundSize: "100% 100%",
+        display: "grid",
+        gridColumnGap: 0,
+        gridRowGap: 0,
+        gridTemplateColumns: "41rem",
+        gridTemplateRows: "2rem 4rem 4rem 4rem 4rem 4rem 4rem 4rem 4rem 4rem 4rem 4rem 4rem 4rem 4rem 4rem 4rem 4rem 4rem 4rem 4rem",
+        width: "41rem"
+    };
+
+    const combinedStyles = {...props.style, ...wallStyles };
 
     return (
         <div
-            style={{
-                background: "url(" + Sprite + ") 0 0 no-repeat",
-                backgroundSize: "100% 100%",
-                display: "grid",
-                gridColumnGap: 0,
-                gridRowGap: 0,
-                gridTemplateColumns: "41rem",
-                gridTemplateRows: "2rem 4rem 4rem 4rem 4rem 4rem 4rem 4rem 4rem 4rem 4rem 4rem 4rem 4rem 4rem 4rem 4rem 4rem 4rem 4rem 4rem",
-                width: "41rem"
-            }}
+            style={combinedStyles}
         >
             <div style={{gridArea: "1 / 1 / 2 / 2"}} />
             <Floor style={{gridArea: "2 / 1 / 3 / 2"}} />
