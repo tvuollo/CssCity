@@ -15,16 +15,18 @@ const CanvasView = () => {
             />
             <Skyscraper1
                 floors={4}
+                windows={6}
                 style={{
                     left: "120rem",
                     top: "40rem"
                 }}
             />
             <Skyscraper1
-                floors={12}
+                floors={8}
+                windows={18}
                 style={{
                     left: "80rem",
-                    top: "120rem"
+                    top: "100rem"
                 }}
             />
         </Canvas>

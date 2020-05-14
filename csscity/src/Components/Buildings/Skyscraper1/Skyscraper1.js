@@ -5,11 +5,12 @@ import Roof from './Roof.gif';
 
 const Skyscraper1 = ({
     style = {},
-    floors = 20
+    floors = 20,
+    windows = 10
 }) => {
 
     const height = floors * 4 + 2 + "rem";
-    const width = "41rem";
+    const width = windows + 1 + windows * 3 + "rem";
 
     const defaultStyles = {
         backgroundColor: "rgba(0,0,0,.5)",
@@ -24,6 +25,7 @@ const Skyscraper1 = ({
         <div style={combinedStyles}>
             <Wall
                 floors={floors}
+                windows={windows}
                 style={{
                     position: "absolute",
                     transform: "rotateX(-90deg) translateY(-" + height + ")",
@@ -32,6 +34,7 @@ const Skyscraper1 = ({
             />           
             <Wall
                 floors={floors}
+                windows={windows}
                 style={{
                     position: "absolute",
                     transform: "rotateX(-90deg) rotateY(-90deg) translateY(-" + height + ")",
@@ -40,6 +43,7 @@ const Skyscraper1 = ({
             />
             <Wall
                 floors={floors}
+                windows={windows}
                 style={{
                     position: "absolute",
                     transform: "rotateX(-90deg) rotateY(90deg) translateY(-" + height + ")",
@@ -48,6 +52,7 @@ const Skyscraper1 = ({
             />
             <Wall
                 floors={floors}
+                windows={windows}
                 style={{
                     position: "absolute",
                     transform: "rotateX(-90deg) translateY(-" + height + ") translateZ(" + width + ")",

@@ -5,8 +5,11 @@ import Floor from './Floor';
 
 const Wall = ({
     style = {},
-    floors = 20
+    floors = 20,
+    windows = 10
 }) => {
+
+    const width = windows + 1 + windows * 3 + "rem";
 
     function GridTemplateRows (amount) {
         let output = "2rem";
@@ -24,9 +27,9 @@ const Wall = ({
         display: "grid",
         gridColumnGap: 0,
         gridRowGap: 0,
-        gridTemplateColumns: "41rem",
+        gridTemplateColumns: width,
         gridTemplateRows: GridTemplateRows(floors),
-        width: "41rem"
+        width: width
     };
 
     const combinedStyles = {...style, ...wallStyles };
@@ -38,9 +41,8 @@ const Wall = ({
         floorNumber++;
         const rowStart = floorNumber;
         const rowEnd = floorNumber+1;
-        floorsArray.push(<Floor style={{gridArea: rowStart + " / 1 / " + rowEnd + " / 2"}} />);
+        floorsArray.push(<Floor windows={windows} style={{gridArea: rowStart + " / 1 / " + rowEnd + " / 2"}} />);
     }
-
 
     return (
         <div
