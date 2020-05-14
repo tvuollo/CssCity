@@ -1,19 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import "./App.scss";
 
-import Wall from './Components/Buildings/Skyscraper1/Wall';
-import Canvas from './Components/Canvas/Canvas';
+import CanvasView from './Views/CanvasView';
+import SpritesView from './Views/SpritesView';
 
-function App() {
+const App = () => {
+
+  const [view, setView] = useState("sprites");
+
   return (
     <div className="App">
-      <div style={{padding:20}}>
-        <Wall />        
-      </div>
-        <Canvas />
+
+      <nav class="nav">
+        <button
+          className="nav__button"
+          disabled={view == "sprites"}
+          onClick={() => setView("sprites")}
+        >
+          Sprites
+          </button>
+        <button
+          className="nav__button"
+          disabled={view == "canvas"}
+          onClick={() => setView("canvas")}
+        >
+          Canvas
+        </button>
+      </nav>
+
+      {view == "sprites" &&
+        <SpritesView />
+      }
+      {view == "canvas" &&
+        <CanvasView />
+      }
     </div>
   );
+
 }
 
 export default App;
