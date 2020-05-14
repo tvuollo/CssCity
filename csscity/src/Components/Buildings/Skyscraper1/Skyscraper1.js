@@ -3,44 +3,54 @@ import React from 'react';
 import Wall from './Wall';
 import Roof from './Roof.gif';
 
-const Skyscraper1 = (props) => {
+const Skyscraper1 = ({
+    style = {},
+    floors = 20
+}) => {
+
+    const height = floors * 4 + 2 + "rem";
+    const width = "41rem";
 
     const defaultStyles = {
         backgroundColor: "rgba(0,0,0,.5)",
-        height: "41rem",
+        height: width,
         position: "absolute",
-        width: "41rem"        
+        width: width        
     };
 
-    const combinedStyles = {...props.style, ...defaultStyles };
+    const combinedStyles = {...style, ...defaultStyles };
 
     return (
         <div style={combinedStyles}>
             <Wall
+                floors={floors}
                 style={{
                     position: "absolute",
-                    transform: "rotateX(-90deg) translateY(-90rem)",
+                    transform: "rotateX(-90deg) translateY(-" + height + ")",
                     transformOrigin: "top left"
                 }}
             />           
             <Wall
+                floors={floors}
                 style={{
                     position: "absolute",
-                    transform: "rotateX(-90deg) rotateY(-90deg) translateY(-90rem)",
+                    transform: "rotateX(-90deg) rotateY(-90deg) translateY(-" + height + ")",
                     transformOrigin: "top left"
                 }}
             />
             <Wall
+                floors={floors}
                 style={{
                     position: "absolute",
-                    transform: "rotateX(-90deg) rotateY(90deg) translateY(-90rem)",
+                    transform: "rotateX(-90deg) rotateY(90deg) translateY(-" + height + ")",
                     transformOrigin: "top right"
                 }}
             />
             <Wall
+                floors={floors}
                 style={{
                     position: "absolute",
-                    transform: "rotateX(-90deg) translateY(-90rem) translateZ(41rem)",
+                    transform: "rotateX(-90deg) translateY(-" + height + ") translateZ(" + width + ")",
                     transformOrigin: "top left"
                 }}
             />
@@ -48,11 +58,11 @@ const Skyscraper1 = (props) => {
                 style={{
                     background: "url(" + Roof + ") 0 0 no-repeat",
                     backgroundSize: "100% 100%",
-                    height: "41rem",
+                    height: width,
                     position: "absolute",
-                    transform: " translateZ(90rem)",
+                    transform: " translateZ(" + height + ")",
                     transformOrigin: "top left",
-                    width: "41rem"
+                    width: width
                 }}
             />
         </div>

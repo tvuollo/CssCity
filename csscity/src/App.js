@@ -7,7 +7,7 @@ import SpritesView from './Views/SpritesView';
 
 const App = () => {
 
-  const [view, setView] = useState("sprites");
+  const [view, setView] = useState("canvas");
 
   return (
     <div className="App">

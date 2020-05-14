@@ -7,7 +7,26 @@ const CanvasView = () => {
 
     return (
         <Canvas>
-            <Skyscraper1 style={{ left: "40rem", top: "40rem" }} />
+            <Skyscraper1
+                style={{
+                    left: "40rem",
+                    top: "40rem"
+                }}
+            />
+            <Skyscraper1
+                floors={4}
+                style={{
+                    left: "120rem",
+                    top: "40rem"
+                }}
+            />
+            <Skyscraper1
+                floors={12}
+                style={{
+                    left: "80rem",
+                    top: "120rem"
+                }}
+            />
         </Canvas>
     );
 
