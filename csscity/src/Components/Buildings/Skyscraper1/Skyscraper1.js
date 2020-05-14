@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Wall from './Wall';
+import Roof from './Roof.gif';
 
 const Skyscraper1 = (props) => {
 
@@ -41,6 +42,17 @@ const Skyscraper1 = (props) => {
                     position: "absolute",
                     transform: "rotateX(-90deg) translateY(-90rem) translateZ(41rem)",
                     transformOrigin: "top left"
+                }}
+            />
+            <div
+                style={{
+                    background: "url(" + Roof + ") 0 0 no-repeat",
+                    backgroundSize: "100% 100%",
+                    height: "41rem",
+                    position: "absolute",
+                    transform: " translateZ(90rem)",
+                    transformOrigin: "top left",
+                    width: "41rem"
                 }}
             />
         </div>

@@ -35,12 +35,7 @@ const Canvas = () => {
                     transform: "rotateX(60deg) rotateY(0deg) rotateZ(30deg) scale(0.5)"
                 }}
             >
-                <Skyscraper1
-                    style={{
-                        left: "82rem",
-                        top: "82rem"
-                    }}
-                />
+                <Skyscraper1 style={{ left: "40rem", top: "40rem" }} />
             </div>
         </div>
     );
