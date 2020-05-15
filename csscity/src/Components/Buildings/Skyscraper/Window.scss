@@ -1,11 +1,14 @@
+$sprite: 'Variation01Window.gif';
+$bg-off: rgba(0,0,0,.3);
+
 .window {
-    background: transparent url('Variation01Window.gif') 0 -2rem no-repeat;
+    background: transparent url($sprite) 0 -2rem no-repeat;
     background-size: 3rem 6rem !important;
     height: 2rem;
     width: 3rem;
 
     &--closed {
-        background: rgba(0,0,0,.3);
+        background: $bg-off;
     }
     &--dimmed {
         background-position: 0 -2rem;
@@ -15,25 +18,25 @@
     }
     &--blinking {
         &-1 {
-            background: url('Variation01Window.gif') 0 0 no-repeat;
+            background: url($sprite) 0 0 no-repeat;
             background-color: transparent;
-            background-image: url('Variation01Window.gif');
+            background-image: url($sprite);
             background-size: 3rem 6rem !important;
             animation: blinking-1 60s infinite;
             animation-timing-function: linear; 
         }
         &-2 {
-            background: url('Variation01Window.gif') 0 -2rem no-repeat;
+            background: url($sprite) 0 -2rem no-repeat;
             background-color: transparent;
-            background-image: url('Variation01Window.gif');
+            background-image: url($sprite);
             background-size: 3rem 6rem !important;
             animation: blinking-2 30s infinite;
             animation-timing-function: linear;      
         }
         &-3 {
-            background: url('Variation01Window.gif') 0 0 no-repeat;
+            background: url($sprite) 0 0 no-repeat;
             background-color: transparent;
-            background-image: url('Variation01Window.gif');
+            background-image: url($sprite);
             background-size: 3rem 6rem !important;
             animation: blinking-1 90s infinite;
             animation-timing-function: linear;         
@@ -41,71 +44,65 @@
     }
 }
 
+@mixin blinking-state-on () {
+    background-color: transparent;
+    background-image: url($sprite);       
+}
+@mixin blinking-state-off () {
+    background-color: $bg-off;
+    background-image: none;        
+}
+
 @keyframes blinking-1 {
     0% {
-        background-color: transparent;
-        background-image: url('Variation01Window.gif');
+        @include blinking-state-on();
     }
     49% {
-        background-color: transparent;
-        background-image: url('Variation01Window.gif');
+        @include blinking-state-on();
     }
     50% {
-        background-color: rgba(0,0,0,.3);
-        background-image: none;
+        @include blinking-state-off();
     }
     99% {
-        background-color: rgba(0,0,0,.3);
-        background-image: none;
+        @include blinking-state-off();
     }
     100% {
-        background-color: transparent;
-        background-image: url('Variation01Window.gif');
+        @include blinking-state-on();
     }
 }
 
 @keyframes blinking-2 {
     0% {
-        background-color: rgba(0,0,0,.3);
-        background-image: none;
+        @include blinking-state-off();
     }
     33% {
-        background-color: rgba(0,0,0,.3);
-        background-image: none;
+        @include blinking-state-off();
     }
     34% {
-        background-color: transparent;
-        background-image: url('Variation01Window.gif');
+        @include blinking-state-on();
     }
     99% {
-        background-color: transparent;
-        background-image: url('Variation01Window.gif');
+        @include blinking-state-on();
     }
     100% {
-        background-color: rgba(0,0,0,.3);
-        background-image: none;
+        @include blinking-state-off();
     }
 }
 
 @keyframes blinking-3 {
     0% {
-        background-color: rgba(0,0,0,.3);
-        background-image: none;
+        @include blinking-state-off();
     }
     15% {
-        background-color: rgba(0,0,0,.3);
-        background-image: none;
+        @include blinking-state-off();
     }
     16% {
-        background-color: transparent;
-        background-image: url('Variation01Window.gif');
+        @include blinking-state-on();
     }
     99% {
-        background-color: transparent;
-        background-image: url('Variation01Window.gif');
+        @include blinking-state-on();
     }
     100% {
-        background-color: rgba(0,0,0,.3);
-        background-image: none;
+        @include blinking-state-off();
     }
 }
