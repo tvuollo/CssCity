@@ -1,0 +1,111 @@
+.window {
+    background: transparent url('Variation01Window.gif') 0 -2rem no-repeat;
+    background-size: 3rem 6rem !important;
+    height: 2rem;
+    width: 3rem;
+
+    &--closed {
+        background: rgba(0,0,0,.3);
+    }
+    &--dimmed {
+        background-position: 0 -2rem;
+    }
+    &--lighted {    
+        background-position: 0 0;
+    }
+    &--blinking {
+        &-1 {
+            background: url('Variation01Window.gif') 0 0 no-repeat;
+            background-color: transparent;
+            background-image: url('Variation01Window.gif');
+            background-size: 3rem 6rem !important;
+            animation: blinking-1 60s infinite;
+            animation-timing-function: linear; 
+        }
+        &-2 {
+            background: url('Variation01Window.gif') 0 -2rem no-repeat;
+            background-color: transparent;
+            background-image: url('Variation01Window.gif');
+            background-size: 3rem 6rem !important;
+            animation: blinking-2 30s infinite;
+            animation-timing-function: linear;      
+        }
+        &-3 {
+            background: url('Variation01Window.gif') 0 0 no-repeat;
+            background-color: transparent;
+            background-image: url('Variation01Window.gif');
+            background-size: 3rem 6rem !important;
+            animation: blinking-1 90s infinite;
+            animation-timing-function: linear;         
+        }
+    }
+}
+
+@keyframes blinking-1 {
+    0% {
+        background-color: transparent;
+        background-image: url('Variation01Window.gif');
+    }
+    49% {
+        background-color: transparent;
+        background-image: url('Variation01Window.gif');
+    }
+    50% {
+        background-color: rgba(0,0,0,.3);
+        background-image: none;
+    }
+    99% {
+        background-color: rgba(0,0,0,.3);
+        background-image: none;
+    }
+    100% {
+        background-color: transparent;
+        background-image: url('Variation01Window.gif');
+    }
+}
+
+@keyframes blinking-2 {
+    0% {
+        background-color: rgba(0,0,0,.3);
+        background-image: none;
+    }
+    33% {
+        background-color: rgba(0,0,0,.3);
+        background-image: none;
+    }
+    34% {
+        background-color: transparent;
+        background-image: url('Variation01Window.gif');
+    }
+    99% {
+        background-color: transparent;
+        background-image: url('Variation01Window.gif');
+    }
+    100% {
+        background-color: rgba(0,0,0,.3);
+        background-image: none;
+    }
+}
+
+@keyframes blinking-3 {
+    0% {
+        background-color: rgba(0,0,0,.3);
+        background-image: none;
+    }
+    15% {
+        background-color: rgba(0,0,0,.3);
+        background-image: none;
+    }
+    16% {
+        background-color: transparent;
+        background-image: url('Variation01Window.gif');
+    }
+    99% {
+        background-color: transparent;
+        background-image: url('Variation01Window.gif');
+    }
+    100% {
+        background-color: rgba(0,0,0,.3);
+        background-image: none;
+    }
+}

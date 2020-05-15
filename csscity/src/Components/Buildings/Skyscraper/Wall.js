@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import Sprite from './Wall.gif';
+import Sprite from './Variation01Wall.gif';
 import Floor from './Floor';
 
 const Wall = ({

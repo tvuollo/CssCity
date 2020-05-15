@@ -1,27 +1,35 @@
 import React, { useState } from 'react';
 
-import Sprite from './Window.gif';
+import "./Window.scss";
 
 const Window = (props) => {
 
-    let windowStatus = "0 -2rem";
+    let windowClass = "dimmed";
     const random = Math.floor(Math.random() * 100) + 1;
-    if (random < 33) {
-        windowStatus = "0 0";
+    if (random == 1) {
+        windowClass = "blinking window--blinking-1";
+    }
+    else if (random == 2) {
+        windowClass = "blinking window--blinking-2";
+    }
+    else if (random == 3) {
+        windowClass = "blinking window--blinking-3";
+    }
+    else if (random < 35) {
+        windowClass = "lighted";
     }
     else if (random > 85) {
-        windowStatus = "0 -4rem";
+        windowClass = "closed";
     }
 
-    const windowStyles= {
-        background: "rgba(0,0,0,.3) url(" + Sprite + ") " + windowStatus + " no-repeat",
+    const windowStyles = {
         backgroundSize: "3rem auto"
-    };
+    }
 
     const combinedStyles = {...props.style, ...windowStyles };
 
     return (
-        <div style={combinedStyles} />
+        <div className={"window window--" + (windowClass)} style={combinedStyles} data-delay={Math.floor(Math.random() * 6)} />
     );
 }
 

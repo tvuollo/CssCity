@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Wall from './Wall';
-import Roof from './Roof.gif';
+import Roof from './Variation01Roof.gif';
 
 const Skyscraper = ({
     style = {},
