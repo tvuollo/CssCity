@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Wall from './../Components/Buildings/Skyscraper1/Wall';
+import Wall from './../Components/Buildings/Skyscraper/Wall';
 
 const SpritesView = () => {
 

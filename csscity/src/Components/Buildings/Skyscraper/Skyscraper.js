@@ -3,7 +3,7 @@ import React from 'react';
 import Wall from './Wall';
 import Roof from './Roof.gif';
 
-const Skyscraper1 = ({
+const Skyscraper = ({
     style = {},
     floors = 20,
     windows = 10
@@ -74,4 +74,4 @@ const Skyscraper1 = ({
     );
 }
 
-export default Skyscraper1;
+export default Skyscraper;
