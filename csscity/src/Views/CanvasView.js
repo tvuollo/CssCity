@@ -18,7 +18,7 @@ const CanvasView = () => {
                     }}
                 />
                 <Skyscraper
-                    variation={1}
+                    variation={2}
                     floors={4}
                     windows={6}
                     style={{
@@ -27,7 +27,7 @@ const CanvasView = () => {
                     }}
                 />
                 <Skyscraper
-                    variation={1}
+                    variation={2}
                     floors={8}
                     windows={18}
                     style={{

@@ -6,16 +6,16 @@ const Window02 = (props) => {
 
     let windowClass = "dimmed";
     const random = Math.floor(Math.random() * 100) + 1;
-    if (random == 1) {
-        windowClass = "blinking window--blinking-1";
+    if (random == 3) {
+        windowClass = "blinking window02--blinking-1";
     }
-    else if (random == 2) {
-        windowClass = "blinking window--blinking-2";
+    else if (random == 4) {
+        windowClass = "blinking window02--blinking-2";
     }
-    else if (random == 3) {
-        windowClass = "blinking window--blinking-3";
+    else if (random == 5) {
+        windowClass = "blinking window02--blinking-3";
     }
-    else if (random < 38) {
+    else if (random < 39) {
         windowClass = "lighted";
     }
     else if (random > 95) {

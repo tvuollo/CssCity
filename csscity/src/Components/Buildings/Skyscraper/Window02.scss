@@ -1,8 +1,8 @@
-$sprite: 'Variation01Window.gif';
-$bg-off: rgba(0,0,0,.3);
+$sprite2: 'Window02.gif';
+$bg-off: rgba(255,255,255,.1);
 
 .window02 {
-    background: transparent url($sprite) 0 -2rem no-repeat;
+    background: transparent url($sprite2) 0 -2rem no-repeat;
     background-size: 2rem 6rem !important;
     height: 2rem;
     width: 2rem;
@@ -16,44 +16,42 @@ $bg-off: rgba(0,0,0,.3);
     &--lighted {    
         background-position: 0 0;
     }
-    &--blinking {
-        &-1 {
-            background: url($sprite) 0 0 no-repeat;
-            background-color: transparent;
-            background-image: url($sprite);
-            background-size: 2rem 6rem !important;
-            animation: blinking-1 60s infinite;
-            animation-timing-function: linear; 
-        }
-        &-2 {
-            background: url($sprite) 0 -2rem no-repeat;
-            background-color: transparent;
-            background-image: url($sprite);
-            background-size: 2rem 6rem !important;
-            animation: blinking-2 30s infinite;
-            animation-timing-function: linear;      
-        }
-        &-3 {
-            background: url($sprite) 0 0 no-repeat;
-            background-color: transparent;
-            background-image: url($sprite);
-            background-size: 2rem 6rem !important;
-            animation: blinking-1 90s infinite;
-            animation-timing-function: linear;         
-        }
+    &--blinking-1 {
+        background: url($sprite2) 0 0 no-repeat;
+        background-color: transparent;
+        background-image: url($sprite2);
+        background-size: 2rem 6rem !important;
+        animation: blinking-02-1 45s infinite;
+        animation-timing-function: linear; 
+    }
+    &--blinking-2 {
+        background: url($sprite2) 0 -2rem no-repeat;
+        background-color: transparent;
+        background-image: url($sprite2);
+        background-size: 2rem 6rem !important;
+        animation: blinking-02-2 15s infinite;
+        animation-timing-function: linear;      
+    }
+    &--blinking-3 {
+        background: url($sprite2) 0 0 no-repeat;
+        background-color: transparent;
+        background-image: url($sprite2);
+        background-size: 2rem 6rem !important;
+        animation: blinking-02-1 90s infinite;
+        animation-timing-function: linear;         
     }
 }
 
 @mixin blinking-state-on () {
     background-color: transparent;
-    background-image: url($sprite);       
+    background-image: url($sprite2);       
 }
 @mixin blinking-state-off () {
     background-color: $bg-off;
     background-image: none;        
 }
 
-@keyframes blinking-1 {
+@keyframes blinking-02-1 {
     0% {
         @include blinking-state-on();
     }
@@ -71,7 +69,7 @@ $bg-off: rgba(0,0,0,.3);
     }
 }
 
-@keyframes blinking-2 {
+@keyframes blinking-02-2 {
     0% {
         @include blinking-state-off();
     }
@@ -89,7 +87,7 @@ $bg-off: rgba(0,0,0,.3);
     }
 }
 
-@keyframes blinking-3 {
+@keyframes blinking-02-3 {
     0% {
         @include blinking-state-off();
     }

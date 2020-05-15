@@ -1,7 +1,8 @@
 import React from 'react';
 
 import Wall from './Wall';
-import Roof from './Variation01Roof.gif';
+import Roof01 from './Roof01.gif';
+import Roof02 from './Roof02.gif';
 
 const Skyscraper = ({
     style = {},
@@ -15,13 +16,15 @@ const Skyscraper = ({
     let windowSpacing= 1;
     let topFloorHeight = 2;
     let floorSideGutter = windowSpacing;
+    let roof = Roof01;
 
     if (variation === 2) {
         windowWidth = 2;
         floorHeight = 4;
         windowSpacing= 1;
         topFloorHeight = 6;
-        floorSideGutter = 2;   
+        floorSideGutter = 2;
+        roof = Roof02;
     }
 
     const height = floors * floorHeight + topFloorHeight + "rem";
@@ -99,7 +102,7 @@ const Skyscraper = ({
             />
             <div
                 style={{
-                    background: "url(" + Roof + ") 0 0 no-repeat",
+                    background: "url(" + roof + ") 0 0 no-repeat",
                     backgroundSize: "100% 100%",
                     height: width,
                     position: "absolute",

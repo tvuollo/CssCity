@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import Sprite from './Variation01Wall.gif';
+import "./Wall.scss";
 import Floor from './Floor';
 
 const Wall = ({
@@ -16,7 +16,6 @@ const Wall = ({
 }) => {
 
     const width = (windows-1) * windowSpacing + windows * windowWidth + floorSideGutter*2 + "rem";
-    const wallBgColor= "#001942";
 
     function GridTemplateRows (amount) {
         let output = topFloorHeight + "rem";
@@ -29,8 +28,6 @@ const Wall = ({
     }
 
     const wallStyles = {
-        background: wallBgColor + " url(" + Sprite + ") center bottom no-repeat",
-        backgroundSize: "100% auto",
         display: "grid",
         gridColumnGap: 0,
         gridRowGap: 0,
@@ -62,6 +59,7 @@ const Wall = ({
     return (
         <div
             style={combinedStyles}
+            className={"wall wall--" + variation}
         >
             <div style={{gridArea: "1 / 1 / 2 / 2"}} />
             {floorsArray}
