@@ -6,23 +6,29 @@ import Floor from './Floor';
 const Wall = ({
     style = {},
     floors = 20,
-    windows = 10
+    windows = 10,
+    windowWidth = 3,
+    floorHeight= 4,
+    windowSpacing = 1,
+    topFloorHeight = 2,
+    variation = 1
 }) => {
 
-    const width = windows + 1 + windows * 3 + "rem";
+    const width = windows + windowSpacing + windows * windowWidth + "rem";
+    const wallBgColor= "#001942";
 
     function GridTemplateRows (amount) {
-        let output = "2rem";
+        let output = topFloorHeight + "rem";
         let i = 1;
         while (i < amount) {
-            output = output + " 4rem";
+            output = output + " " + floorHeight + "rem";
             i++;
         }
         return output;
     }
 
     const wallStyles = {
-        background: "#001942 url(" + Sprite + ") center bottom no-repeat",
+        background: wallBgColor + " url(" + Sprite + ") center bottom no-repeat",
         backgroundSize: "100% auto",
         display: "grid",
         gridColumnGap: 0,
@@ -41,7 +47,13 @@ const Wall = ({
         floorNumber++;
         const rowStart = floorNumber;
         const rowEnd = floorNumber+1;
-        floorsArray.push(<Floor windows={windows} style={{gridArea: rowStart + " / 1 / " + rowEnd + " / 2"}} />);
+        floorsArray.push(<Floor
+            windowWidth={windowWidth}
+            floorHeight={floorHeight}
+            windowSpacing={windowSpacing}
+            windows={windows}
+            style={{gridArea: rowStart + " / 1 / " + rowEnd + " / 2"}}
+            />);
     }
 
     return (

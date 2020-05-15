@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import Window from './Window';
+import Window01 from './Window01';
 
 const Floor = ({
     style = {},
@@ -34,7 +34,7 @@ const Floor = ({
         windowsNumber++;
         const colStart = windowsNumber;
         const colEnd = windowsNumber+2;
-        windowsArray.push(<Window style={{gridArea: "1 / " + colStart + " / 2 / " + colEnd }} />);
+        windowsArray.push(<Window01 style={{gridArea: "1 / " + colStart + " / 2 / " + colEnd }} />);
         windowsNumber++;
     }
 

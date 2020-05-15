@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-import "./Window.scss";
+import "./Window01.scss";
 
-const Window = (props) => {
+const Window01 = (props) => {
 
     let windowClass = "dimmed";
     const random = Math.floor(Math.random() * 100) + 1;
@@ -33,4 +33,4 @@ const Window = (props) => {
     );
 }
 
-export default Window;
+export default Window01;

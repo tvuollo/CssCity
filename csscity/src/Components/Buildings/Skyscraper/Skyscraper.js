@@ -6,14 +6,19 @@ import Roof from './Variation01Roof.gif';
 const Skyscraper = ({
     style = {},
     floors = 20,
-    windows = 10
+    windows = 10,
+    variation = 1
 }) => {
+    
+    const windowWidth = 3;
+    const floorHeight = 4;
+    const windowSpacing= 1;
+    const topFloorHeight = 2;
 
-    const height = floors * 4 + 2 + "rem";
-    const width = windows + 1 + windows * 3 + "rem";
+    const height = floors * floorHeight + topFloorHeight + "rem";
+    const width = windows + windowSpacing + windows * windowWidth + "rem";
 
     const defaultStyles = {
-        backgroundColor: "rgba(0,0,0,.5)",
         height: width,
         position: "absolute",
         width: width        
@@ -26,6 +31,10 @@ const Skyscraper = ({
             <Wall
                 floors={floors}
                 windows={windows}
+                windowWidth={windowWidth}
+                floorHeight={floorHeight}
+                windowSpacing={windowSpacing}
+                topFloorHeight={topFloorHeight}
                 style={{
                     position: "absolute",
                     transform: "rotateX(-90deg) translateY(-" + height + ")",
@@ -35,6 +44,10 @@ const Skyscraper = ({
             <Wall
                 floors={floors}
                 windows={windows}
+                windowWidth={windowWidth}
+                floorHeight={floorHeight}
+                windowSpacing={windowSpacing}
+                topFloorHeight={topFloorHeight}
                 style={{
                     position: "absolute",
                     transform: "rotateX(-90deg) rotateY(-90deg) translateY(-" + height + ")",
@@ -44,6 +57,10 @@ const Skyscraper = ({
             <Wall
                 floors={floors}
                 windows={windows}
+                windowWidth={windowWidth}
+                floorHeight={floorHeight}
+                windowSpacing={windowSpacing}
+                topFloorHeight={topFloorHeight}
                 style={{
                     position: "absolute",
                     transform: "rotateX(-90deg) rotateY(90deg) translateY(-" + height + ")",
@@ -53,6 +70,10 @@ const Skyscraper = ({
             <Wall
                 floors={floors}
                 windows={windows}
+                windowWidth={windowWidth}
+                floorHeight={floorHeight}
+                windowSpacing={windowSpacing}
+                topFloorHeight={topFloorHeight}
                 style={{
                     position: "absolute",
                     transform: "rotateX(-90deg) translateY(-" + height + ") translateZ(" + width + ")",
