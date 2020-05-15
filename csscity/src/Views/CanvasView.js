@@ -2,21 +2,23 @@ import React, { useState } from 'react';
 
 import "./CanvasView.scss";
 import Canvas from './../Components/Canvas/Canvas';
-import Skyscraper1 from './../Components/Buildings/Skyscraper1/Skyscraper1';
+import Skyscraper from './../Components/Buildings/Skyscraper/Skyscraper';
 
 const CanvasView = () => {
 
     return (
         <>
             <Canvas>
-                <Skyscraper1
-                floors={20}
+                <Skyscraper
+                    variation={1}
+                    floors={20}
                     style={{
                         left: "40rem",
                         top: "40rem"
                     }}
                 />
-                <Skyscraper1
+                <Skyscraper
+                    variation={2}
                     floors={4}
                     windows={6}
                     style={{
@@ -24,7 +26,8 @@ const CanvasView = () => {
                         top: "40rem"
                     }}
                 />
-                <Skyscraper1
+                <Skyscraper
+                    variation={2}
                     floors={8}
                     windows={18}
                     style={{
@@ -32,7 +35,8 @@ const CanvasView = () => {
                         top: "100rem"
                     }}
                 />
-                <Skyscraper1
+                <Skyscraper
+                    variation={1}
                     floors={3}
                     windows={4}
                     style={{

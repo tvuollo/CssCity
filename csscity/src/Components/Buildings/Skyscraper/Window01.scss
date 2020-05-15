@@ -1,0 +1,106 @@
+$sprite1: 'Window01.gif';
+$bg-off: rgba(0,0,0,.3);
+
+.window01 {
+    background: transparent url($sprite1) 0 -2rem no-repeat;
+    background-size: 3rem 6rem !important;
+    height: 2rem;
+    width: 3rem;
+
+    &--closed {
+        background: $bg-off;
+    }
+    &--dimmed {
+        background-position: 0 -2rem;
+    }
+    &--lighted {    
+        background-position: 0 0;
+    }
+    &--blinking-1 {
+        background: url($sprite1) 0 0 no-repeat;
+        background-color: transparent;
+        background-image: url($sprite1);
+        background-size: 3rem 6rem !important;
+        animation: blinking-01-1 60s infinite;
+        animation-timing-function: linear; 
+    }
+    &--blinking-2 {
+        background: url($sprite1) 0 -2rem no-repeat;
+        background-color: transparent;
+        background-image: url($sprite1);
+        background-size: 3rem 6rem !important;
+        animation: blinking-01-2 30s infinite;
+        animation-timing-function: linear;      
+    }
+    &--blinking-3 {
+        background: url($sprite1) 0 0 no-repeat;
+        background-color: transparent;
+        background-image: url($sprite1);
+        background-size: 3rem 6rem !important;
+        animation: blinking-01-1 90s infinite;
+        animation-timing-function: linear;         
+    }
+}
+
+@mixin blinking-state-on () {
+    background-color: transparent;
+    background-image: url($sprite1);       
+}
+@mixin blinking-state-off () {
+    background-color: $bg-off;
+    background-image: none;        
+}
+
+@keyframes blinking-01-1 {
+    0% {
+        @include blinking-state-on();
+    }
+    49% {
+        @include blinking-state-on();
+    }
+    50% {
+        @include blinking-state-off();
+    }
+    99% {
+        @include blinking-state-off();
+    }
+    100% {
+        @include blinking-state-on();
+    }
+}
+
+@keyframes blinking-01-2 {
+    0% {
+        @include blinking-state-off();
+    }
+    33% {
+        @include blinking-state-off();
+    }
+    34% {
+        @include blinking-state-on();
+    }
+    99% {
+        @include blinking-state-on();
+    }
+    100% {
+        @include blinking-state-off();
+    }
+}
+
+@keyframes blinking-01-3 {
+    0% {
+        @include blinking-state-off();
+    }
+    15% {
+        @include blinking-state-off();
+    }
+    16% {
+        @include blinking-state-on();
+    }
+    99% {
+        @include blinking-state-on();
+    }
+    100% {
+        @include blinking-state-off();
+    }
+}
