@@ -11,10 +11,11 @@ const Wall = ({
     floorHeight= 4,
     windowSpacing = 1,
     topFloorHeight = 2,
+    floorSideGutter = windowSpacing,
     variation = 1
 }) => {
 
-    const width = windows + windowSpacing + windows * windowWidth + "rem";
+    const width = (windows-1) * windowSpacing + windows * windowWidth + floorSideGutter*2 + "rem";
     const wallBgColor= "#001942";
 
     function GridTemplateRows (amount) {
@@ -48,10 +49,12 @@ const Wall = ({
         const rowStart = floorNumber;
         const rowEnd = floorNumber+1;
         floorsArray.push(<Floor
+            variation={variation}
             windowWidth={windowWidth}
             floorHeight={floorHeight}
             windowSpacing={windowSpacing}
             windows={windows}
+            floorSideGutter={floorSideGutter}
             style={{gridArea: rowStart + " / 1 / " + rowEnd + " / 2"}}
             />);
     }

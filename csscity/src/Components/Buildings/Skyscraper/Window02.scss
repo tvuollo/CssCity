@@ -1,11 +1,11 @@
 $sprite: 'Variation01Window.gif';
 $bg-off: rgba(0,0,0,.3);
 
-.window01 {
+.window02 {
     background: transparent url($sprite) 0 -2rem no-repeat;
-    background-size: 3rem 6rem !important;
+    background-size: 2rem 6rem !important;
     height: 2rem;
-    width: 3rem;
+    width: 2rem;
 
     &--closed {
         background: $bg-off;
@@ -21,7 +21,7 @@ $bg-off: rgba(0,0,0,.3);
             background: url($sprite) 0 0 no-repeat;
             background-color: transparent;
             background-image: url($sprite);
-            background-size: 3rem 6rem !important;
+            background-size: 2rem 6rem !important;
             animation: blinking-1 60s infinite;
             animation-timing-function: linear; 
         }
@@ -29,7 +29,7 @@ $bg-off: rgba(0,0,0,.3);
             background: url($sprite) 0 -2rem no-repeat;
             background-color: transparent;
             background-image: url($sprite);
-            background-size: 3rem 6rem !important;
+            background-size: 2rem 6rem !important;
             animation: blinking-2 30s infinite;
             animation-timing-function: linear;      
         }
@@ -37,7 +37,7 @@ $bg-off: rgba(0,0,0,.3);
             background: url($sprite) 0 0 no-repeat;
             background-color: transparent;
             background-image: url($sprite);
-            background-size: 3rem 6rem !important;
+            background-size: 2rem 6rem !important;
             animation: blinking-1 90s infinite;
             animation-timing-function: linear;         
         }

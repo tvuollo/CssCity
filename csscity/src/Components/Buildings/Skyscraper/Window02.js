@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import "./Window01.scss";
+import "./Window02.scss";
 
-const Window01 = (props) => {
+const Window02 = (props) => {
 
     let windowClass = "dimmed";
     const random = Math.floor(Math.random() * 100) + 1;
@@ -15,22 +15,22 @@ const Window01 = (props) => {
     else if (random == 3) {
         windowClass = "blinking window--blinking-3";
     }
-    else if (random < 35) {
+    else if (random < 38) {
         windowClass = "lighted";
     }
-    else if (random > 85) {
+    else if (random > 95) {
         windowClass = "closed";
     }
 
     const windowStyles = {
-        backgroundSize: "3rem auto"
+        backgroundSize: "2rem auto"
     }
 
     const combinedStyles = {...props.style, ...windowStyles };
 
     return (
-        <div className={"window01 window01--" + (windowClass)} style={combinedStyles} />
+        <div className={"window02 window02--" + (windowClass)} style={combinedStyles} />
     );
 }
 
-export default Window01;
+export default Window02;

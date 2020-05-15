@@ -10,13 +10,15 @@ const CanvasView = () => {
         <>
             <Canvas>
                 <Skyscraper
-                floors={20}
+                    variation={1}
+                    floors={20}
                     style={{
                         left: "40rem",
                         top: "40rem"
                     }}
                 />
                 <Skyscraper
+                    variation={1}
                     floors={4}
                     windows={6}
                     style={{
@@ -25,6 +27,7 @@ const CanvasView = () => {
                     }}
                 />
                 <Skyscraper
+                    variation={1}
                     floors={8}
                     windows={18}
                     style={{
@@ -33,6 +36,7 @@ const CanvasView = () => {
                     }}
                 />
                 <Skyscraper
+                    variation={1}
                     floors={3}
                     windows={4}
                     style={{

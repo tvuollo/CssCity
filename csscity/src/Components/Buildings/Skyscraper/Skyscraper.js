@@ -10,13 +10,22 @@ const Skyscraper = ({
     variation = 1
 }) => {
     
-    const windowWidth = 3;
-    const floorHeight = 4;
-    const windowSpacing= 1;
-    const topFloorHeight = 2;
+    let windowWidth = 3;
+    let floorHeight = 4;
+    let windowSpacing= 1;
+    let topFloorHeight = 2;
+    let floorSideGutter = windowSpacing;
+
+    if (variation === 2) {
+        windowWidth = 2;
+        floorHeight = 4;
+        windowSpacing= 1;
+        topFloorHeight = 6;
+        floorSideGutter = 2;   
+    }
 
     const height = floors * floorHeight + topFloorHeight + "rem";
-    const width = windows + windowSpacing + windows * windowWidth + "rem";
+    const width = windowSpacing * (windows - 1) + windows * windowWidth + floorSideGutter*2 + "rem";
 
     const defaultStyles = {
         height: width,
@@ -35,6 +44,8 @@ const Skyscraper = ({
                 floorHeight={floorHeight}
                 windowSpacing={windowSpacing}
                 topFloorHeight={topFloorHeight}
+                floorSideGutter={floorSideGutter}
+                variation={variation}
                 style={{
                     position: "absolute",
                     transform: "rotateX(-90deg) translateY(-" + height + ")",
@@ -48,6 +59,8 @@ const Skyscraper = ({
                 floorHeight={floorHeight}
                 windowSpacing={windowSpacing}
                 topFloorHeight={topFloorHeight}
+                floorSideGutter={floorSideGutter}
+                variation={variation}
                 style={{
                     position: "absolute",
                     transform: "rotateX(-90deg) rotateY(-90deg) translateY(-" + height + ")",
@@ -61,6 +74,8 @@ const Skyscraper = ({
                 floorHeight={floorHeight}
                 windowSpacing={windowSpacing}
                 topFloorHeight={topFloorHeight}
+                floorSideGutter={floorSideGutter}
+                variation={variation}
                 style={{
                     position: "absolute",
                     transform: "rotateX(-90deg) rotateY(90deg) translateY(-" + height + ")",
@@ -74,6 +89,8 @@ const Skyscraper = ({
                 floorHeight={floorHeight}
                 windowSpacing={windowSpacing}
                 topFloorHeight={topFloorHeight}
+                floorSideGutter={floorSideGutter}
+                variation={variation}
                 style={{
                     position: "absolute",
                     transform: "rotateX(-90deg) translateY(-" + height + ") translateZ(" + width + ")",
