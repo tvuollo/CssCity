@@ -5,21 +5,21 @@ import Grid20 from "./20x20.gif";
 
 const Canvas = (props) => {
 
+    const canvasHeight = props.canvasHeight ? props.canvasHeight : 200;
+    const canvasWidth = props.canvasWidth ? props.canvasWidth : 200;
+
     const [canvasContainerPerspective, setCanvasContainerPerspective] = useState(300);
     const [canvasPerspective, setCanvasPerspective] = useState(3000);
-    const [canvasRotateX, setCanvasRotateX] = useState(60);
-    const [canvasRotateZ, setCanvasRotateZ] = useState(30);
+    const [canvasRotateX, setCanvasRotateX] = useState(80);
+    const [canvasRotateZ, setCanvasRotateZ] = useState(180);
     const [canvasScale, setCanvasScale] = useState(1);
-    const [animation, setAnimation] = useState(true);
-
-    const height = 480/4 + "rem";
-    const width = 640/4 + "rem";
+    const [animation, setAnimation] = useState(false);
 
     function reset () {
         setCanvasContainerPerspective(300);
         setCanvasPerspective(3000);
-        setCanvasRotateX(60);
-        setCanvasRotateZ(30);
+        setCanvasRotateX(80);
+        setCanvasRotateZ(180);
         setCanvasScale(1);
     }
 
@@ -104,27 +104,25 @@ const Canvas = (props) => {
             </div>
 
             <div style={{
-                //backgroundColor: "#d0d0d0",
-                height: height,
-                margin: "20rem auto",
-                //overflow: "hidden",
+                height: "100vw",
+                left: 0,
+                margin: 0,
                 perspective: canvasContainerPerspective + "rem",
-                position: "relative",
-                transform: "translateY(40rem)",
-                transformOrigin: "center center",
-                width: width
+                position: "absolute",
+                top: 0,
+                width: "100vw"
             }}>
                 <div
                     className={animation === true ? "canvas" : ""}
                     style={{
                         background: "rgba(0,90,10,.35) url(" + Grid20 + ")",
-                        height: "200rem",
+                        height: canvasHeight + "rem",
                         perspective: canvasPerspective + "rem",
                         position: "absolute",
                         left: "50%",
-                        margin: "-100rem 0px 0px -100rem",
+                        margin: "-" + canvasHeight/2 + "rem 0px 0px -" + canvasWidth/2 + "rem",
                         top: "50%",
-                        width: "200rem",
+                        width: canvasWidth + "rem",
                         transformStyle: "preserve-3d",
                         transform: "rotateX(" + canvasRotateX + "deg) rotateY(0deg) rotateZ(" + canvasRotateZ + "deg) scale(" + canvasScale + ")"
                     }}
